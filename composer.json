@@ -1,12 +1,15 @@
 {
     "name": "vendor/php-project-45",
-    "bin": ["bin/brain-games"],
+    "bin": ["bin/brain-games","bin/brain-even"],
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Vendor\\PhpProject45\\": "src/"
-        }
+        },
+        "files": [
+            "src/Cli.php"
+        ]
     },
     "authors": [
         {
@@ -16,6 +19,7 @@
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7"
+    },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.18"
     }
