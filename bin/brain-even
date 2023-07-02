@@ -1,0 +1,53 @@
+#!/usr/bin/env php
+<?php
+
+use function cli\line;
+use function cli\prompt;
+
+require_once  'vendor/autoload.php';
+
+line('Welcome to the Brain Game!');
+$name = prompt('May I have your name?');
+line("Hello, %s!", $name);
+line('Answer "yes" if the number is even, otherwise answer "no".');
+$gameTime = 0;
+while ($gameTime < 3) {
+    $res = startGame($name);
+    if($res > 0) $gameTime++;
+    else $gameTime = 0;
+}
+line("Congratulations, %s!", $name);
+
+function getRandNumber():int
+{
+    return rand();
+}
+function isEven($number):bool
+{
+    return $number %2 == 0;
+}
+
+function startGame(string $name): int
+{
+    $randNumber = getRandNumber();
+    line('Question: %s', $randNumber);
+    $answer = prompt('Your answer');
+    if(isEven($randNumber) && $answer == 'yes') {
+        line("Correct!");
+        return 1;
+    }
+    elseif(!isEven($randNumber) && $answer == 'no') {
+        line("Correct!");
+        return 1;
+    }
+    elseif(isEven($randNumber) && $answer == 'no') {
+        line("'no' is wrong answer ;(. Correct answer was 'yes'.");
+        line("Let's try again, Bill!");
+        return 0;
+    }
+    elseif(!isEven($randNumber) && $answer == 'yes') {
+        line("'yes' is wrong answer ;(. Correct answer was 'no'.");
+        line("Let's try again, %s!",$name);
+        return 0;
+    }
+}
