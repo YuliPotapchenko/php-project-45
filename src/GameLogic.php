@@ -61,6 +61,18 @@ function runGames(string $game_name)
                 line('Correct!');
             }
             break;
+        case 'BrainPrime':
+            line('Answer "yes" if given number is prime. Otherwise answer "no".');
+            for ($i = 0; $i < 3; $i++) {
+                [$answer, $right_answer] = BrainPrime();
+                if ($answer != $right_answer) {
+                    line("'$answer' is wrong answer ;(. Correct answer was '$right_answer'.");
+                    line("Let's try again, $name!");
+                    exit;
+                }
+                line('Correct!');
+            }
+            break;
     }
     line("Congratulations, $name!");
 }
@@ -113,6 +125,25 @@ function BrainProgression()
     $answer = prompt('Your answer');
     $right_answer = $random_num + $random_progressor_val * ($random_progression_pos_num - 1);
     return [$answer, $right_answer];
+}
+
+function BrainPrime()
+{
+    $random_num = getRandNum();
+    line("Question: $random_num");
+    $answer = prompt('Your answer');
+    $right_answer = primeCheck($random_num);
+    return [$answer, $right_answer];
+}
+
+function primeCheck($number){
+    if ($number == 1)
+        return 0;
+    for ($i = 2; $i <= $number/2; $i++){
+        if ($number % $i == 0)
+            return "no";
+    }
+    return 'yes';
 }
 
 function nod($a, $b)
