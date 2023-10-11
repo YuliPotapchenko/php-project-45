@@ -1,6 +1,10 @@
 {
     "name": "vendor/php-project-45",
-    "bin": ["bin/brain-games","bin/brain-even"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc"
+    ],
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -8,7 +12,8 @@
             "Vendor\\PhpProject45\\": "src/"
         },
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/GameLogic.php"
         ]
     },
     "authors": [
