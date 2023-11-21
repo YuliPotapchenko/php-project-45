@@ -1,5 +1,5 @@
 {
-    "name": "vendor/php-project-45",
+    "name": "hexlet/code",
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
@@ -11,12 +11,14 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "psr-4": {
-            "Vendor\\PhpProject45\\": "src/"
-        },
         "files": [
             "src/Cli.php",
-            "src/GameLogic.php"
+            "src/GameLogic.php",
+            "src/Game/BrainEven.php",
+            "src/Game/BrainCalc.php",
+            "src/Game/BrainGcd.php",
+            "src/Game/BrainProgression.php",
+            "src/Game/BrainPrime.php"
         ]
     },
     "authors": [

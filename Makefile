@@ -8,7 +8,7 @@ brain-even:
 	./bin/brain-even
 brain-calc:
 	./bin/brain-calc
-brain-gcd:
+brain-gcd:/bin
 	./bin/brain-gcd
 brain-progression:
 	./bin/brain-progression
