@@ -30,7 +30,6 @@ function runGames(string $game_name)
             break;
     }
     $game_logic = 'src\Game\run_' . $game_name . '_logic';
-
     for ($i = 0; $i < 3; $i++) {
         [$answer, $right_answer] = eval('return ' . $game_logic . '();');
         if ($answer != $right_answer) {
@@ -43,10 +42,11 @@ function runGames(string $game_name)
     line("Congratulations, $name!");
 }
 
-function primeCheck($number){
+function primeCheck($number)
+{
     if ($number == 1)
         return 0;
-    for ($i = 2; $i <= $number/2; $i++){
+    for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i == 0)
             return "no";
     }
@@ -57,9 +57,8 @@ function nod($a, $b)
 {
     if ($a % $b != 0) {
         return nod($b, $a % $b);
-    } else {
-        return abs($b);
     }
+    return abs($b);
 }
 
 function getRandNum(): int
@@ -83,4 +82,3 @@ function getRandOperationForCalc(): string
     }
     return $operation;
 }
-
