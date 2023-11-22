@@ -13,6 +13,6 @@ function run_BrainGcd_logic(): array
     $random_num2 = getRandNum();
     line("Question: $random_num1 $random_num2");
     $answer = prompt('Your answer');
-    $right_answer = nod($random_num1,$random_num2);
+    $right_answer = nod($random_num1, $random_num2);
     return [$answer, $right_answer];
 }
