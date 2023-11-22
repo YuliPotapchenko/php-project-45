@@ -42,7 +42,7 @@ function runGames(string $game_name)
     line("Congratulations, $name!");
 }
 
-function primeCheck($number)
+function primeCheck(int $number): string
 {
     if ($number == 1) {
         return 0;
@@ -55,7 +55,7 @@ function primeCheck($number)
     return 'yes';
 }
 
-function nod($a, $b)
+function nod(int $a, int $b): mixed
 {
     if ($a % $b != 0) {
         return nod($b, $a % $b);
