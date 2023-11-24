@@ -5,22 +5,23 @@ namespace src\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function runGames($getQuestionAndAnswer,string $rules)
+const ROUNDS_COUNT = 3;
+
+function runGames(array $getQuestionAndAnswer,string $rules)
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, $name!");
     line($rules);
-    for ($i = 0; $i < 3; $i++) {
-        [$question, $correctAnswer] = $getQuestionAndAnswer();
-        line("Question: %s", $question);
-        $userAnswer = prompt('Your answer');
-        if ($userAnswer == $correctAnswer) {
-            line('Correct!');
+    foreach ($getQuestionAndAnswer as $gameTask => $correctAnswer) {
+        line("Question: {$gameTask}");
+        $playerAnswer = prompt("Your answer");
+        if ($playerAnswer === (string) $correctAnswer) {
+            line("Correct!");
         } else {
-            line("'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
-            line("Let's try again, %s", $name);
-            return;
+            line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            exit;
         }
     }
     line("Congratulations, $name!");

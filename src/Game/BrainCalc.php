@@ -7,20 +7,19 @@ use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\getRandOperationForCalc;
 use function src\Engine\runGames;
+use const src\Engine\ROUNDS_COUNT;
 
 const RULES_CALC = 'What is the result of the expression?';
 
 function runBrainCalcGame()
 {
-    $getQuestionAndAnswer = function () {
+    $getQuestionAndAnswer = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum1 = getRandNum();
         $randomNum2 = getRandNum();
         $operation = getRandOperationForCalc();
-        line("Question: $randomNum1 $operation $randomNum2");
-        $answer = prompt('Your answer');
         $rightAnswer = eval('return ' . $randomNum1 . $operation . $randomNum2 . ';');
-        return [$answer, $rightAnswer];
-    };
-
+        $getQuestionAndAnswer["{$randomNum1} {$operation} {$randomNum2}"] = $rightAnswer;
+    }
     runGames($getQuestionAndAnswer, RULES_CALC);
 }

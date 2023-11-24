@@ -7,19 +7,18 @@ use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\runGames;
 use function src\Engine\nod;
+use const src\Engine\ROUNDS_COUNT;
 
 const RULES_GCD = 'Find the greatest common divisor of given numbers.';
 
 function runBrainGcdGame()
 {
-    $getQuestionAndAnswer = function () {
+    $getQuestionAndAnswer = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum1 = getRandNum();
         $randomNum2 = getRandNum();
-        line("Question: $randomNum1 $randomNum2");
-        $answer = prompt('Your answer');
         $rightAnswer = nod($randomNum1, $randomNum2);
-        return [$answer, $rightAnswer];
-    };
-
+        $getQuestionAndAnswer["{$randomNum1} {$randomNum2}"] = $rightAnswer;
+    }
     runGames($getQuestionAndAnswer, RULES_GCD);
 }

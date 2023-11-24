@@ -2,6 +2,7 @@
 
 namespace src\Game;
 
+use const src\Engine\ROUNDS_COUNT;
 use function cli\line;
 use function cli\prompt;
 use function src\Engine\getRandNum;
@@ -11,13 +12,12 @@ const RULES_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function runBrainEvenGame()
 {
-    $getQuestionAndAnswer = function () {
+    $getQuestionAndAnswer = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum = getRandNum();
-        line("Question: $randomNum");
-        $answer = prompt('Your answer');
         $rightAnswer = ($randomNum % 2 == 0) ? 'yes' : "no";
-        return [$answer, $rightAnswer];
-    };
+        $getQuestionAndAnswer["{$randomNum}"] = $rightAnswer;
+    }
 
     runGames($getQuestionAndAnswer, RULES_EVEN);
 }
