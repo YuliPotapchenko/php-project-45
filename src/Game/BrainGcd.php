@@ -18,7 +18,7 @@ function runBrainGcdGame()
         $randomNum1 = getRandNum();
         $randomNum2 = getRandNum();
         $rightAnswer = nod($randomNum1, $randomNum2);
-        $getQuestionAndAnswer["{$randomNum1} {$randomNum2}"] = $rightAnswer;
+        $getQuestionAndAnswer[$i] = ["{$randomNum1} {$randomNum2}", $rightAnswer];
     }
     runGames($getQuestionAndAnswer, RULES_GCD);
 }

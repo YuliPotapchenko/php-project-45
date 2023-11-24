@@ -27,7 +27,7 @@ function runBrainProgressionGame()
         }
         $progressLine = implode(' ', $progressLine);
         $rightAnswer = $randomNum + $randomProgressorVal * ($randomProgressionPosNum - 1);
-        $getQuestionAndAnswer["{$progressLine}"] = $rightAnswer;
+        $getQuestionAndAnswer[$i] = [$progressLine, $rightAnswer];
     }
     runGames($getQuestionAndAnswer, RULES_PROGRESSION);
 }

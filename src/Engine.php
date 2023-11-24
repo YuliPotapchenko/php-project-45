@@ -13,10 +13,11 @@ function runGames(array $getQuestionAndAnswer,string $rules)
     $name = prompt('May I have your name?');
     line("Hello, $name!");
     line($rules);
-    foreach ($getQuestionAndAnswer as $gameTask => $correctAnswer) {
+    foreach ($getQuestionAndAnswer as $result) {
+        [$gameTask, $correctAnswer] = $result;
         line("Question: {$gameTask}");
         $playerAnswer = prompt("Your answer");
-        if ($playerAnswer === (string) $correctAnswer) {
+        if ((string) $playerAnswer === (string) $correctAnswer) {
             line("Correct!");
         } else {
             line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");

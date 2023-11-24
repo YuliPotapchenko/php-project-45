@@ -16,7 +16,7 @@ function runBrainEvenGame()
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum = getRandNum();
         $rightAnswer = ($randomNum % 2 == 0) ? 'yes' : "no";
-        $getQuestionAndAnswer["{$randomNum}"] = $rightAnswer;
+        $getQuestionAndAnswer[$i] = [$randomNum, $rightAnswer];
     }
 
     runGames($getQuestionAndAnswer, RULES_EVEN);

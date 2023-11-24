@@ -19,7 +19,7 @@ function runBrainCalcGame()
         $randomNum2 = getRandNum();
         $operation = getRandOperationForCalc();
         $rightAnswer = eval('return ' . $randomNum1 . $operation . $randomNum2 . ';');
-        $getQuestionAndAnswer["{$randomNum1} {$operation} {$randomNum2}"] = $rightAnswer;
+        $getQuestionAndAnswer[$i] = ["{$randomNum1} {$operation} {$randomNum2}", $rightAnswer];
     }
     runGames($getQuestionAndAnswer, RULES_CALC);
 }

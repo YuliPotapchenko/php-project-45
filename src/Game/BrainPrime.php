@@ -17,7 +17,7 @@ function runBrainPrimeGame()
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum = getRandNum();
         $rightAnswer = primeCheck($randomNum);
-        $getQuestionAndAnswer["{$randomNum}"] = $rightAnswer;
+        $getQuestionAndAnswer[$i] = [$randomNum, $rightAnswer];
     }
     runGames($getQuestionAndAnswer, RULES_PRIME);
 }
