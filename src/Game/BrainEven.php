@@ -6,11 +6,17 @@ use function cli\line;
 use function cli\prompt;
 use function src\Engine\getRandNum;
 
-function runBrainEvenGame(): array
+const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+function runBrainEvenGame()
 {
-    $randomNum = getRandNum();
-    line("Question: $randomNum");
-    $answer = prompt('Your answer');
-    $rightAnswer = ($randomNum % 2 == 0) ? 'yes' : "no";
-    return [$answer, $rightAnswer];
+    $getQuestionAndAnswer = function () {
+        $randomNum = getRandNum();
+        line("Question: $randomNum");
+        $answer = prompt('Your answer');
+        $rightAnswer = ($randomNum % 2 == 0) ? 'yes' : "no";
+        return [$answer, $rightAnswer];
+    };
+
+    runGames($getQuestionAndAnswer, RULES);
 }

@@ -5,9 +5,6 @@ namespace src\Engine;
 use function cli\line;
 use function cli\prompt;
 
-/**
- * @return void
- */
 function runGames(array $getQuestionAndAnswer,string $rules)
 {
     line('Welcome to the Brain Game!');

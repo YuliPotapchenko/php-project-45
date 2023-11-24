@@ -13,6 +13,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function src\GameLogic\runGames;
+use function src\Game\runBrainPrimeGame;
 
-runGames('BrainPrime');
+runBrainPrimeGame();

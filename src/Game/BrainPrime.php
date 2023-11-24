@@ -4,14 +4,20 @@ namespace src\Game;
 
 use function cli\line;
 use function cli\prompt;
-use function src\GameLogic\getRandNum;
-use function src\GameLogic\primeCheck;
+use function src\Engine\getRandNum;
+use function src\Engine\primeCheck;
 
-function run_BrainPrime_logic(): array
+const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+function runBrainPrimeGame()
 {
-    $randomNum = getRandNum();
-    line("Question: $randomNum");
-    $answer = prompt('Your answer');
-    $rightAnswer = primeCheck($randomNum);
-    return [$answer, $rightAnswer];
+    $getQuestionAndAnswer = function () {
+        $randomNum = getRandNum();
+        line("Question: $randomNum");
+        $answer = prompt('Your answer');
+        $rightAnswer = primeCheck($randomNum);
+        return [$answer, $rightAnswer];
+    };
+
+    runGames($getQuestionAndAnswer, RULES);
 }
