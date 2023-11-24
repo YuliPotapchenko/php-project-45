@@ -13,7 +13,7 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/GameLogic.php",
+            "src/Engine.php",
             "src/Game/BrainEven.php",
             "src/Game/BrainCalc.php",
             "src/Game/BrainGcd.php",

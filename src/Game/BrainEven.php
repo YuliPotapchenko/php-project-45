@@ -4,13 +4,13 @@ namespace src\Game;
 
 use function cli\line;
 use function cli\prompt;
-use function src\GameLogic\getRandNum;
+use function src\Engine\getRandNum;
 
-function run_BrainEven_logic(): array
+function runBrainEvenGame(): array
 {
-    $random_num = getRandNum();
-    line("Question: $random_num");
+    $randomNum = getRandNum();
+    line("Question: $randomNum");
     $answer = prompt('Your answer');
-    $right_answer = ($random_num % 2 == 0) ? 'yes' : "no";
-    return [$answer, $right_answer];
+    $rightAnswer = ($randomNum % 2 == 0) ? 'yes' : "no";
+    return [$answer, $rightAnswer];
 }

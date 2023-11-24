@@ -9,9 +9,9 @@ use function src\GameLogic\primeCheck;
 
 function run_BrainPrime_logic(): array
 {
-    $random_num = getRandNum();
-    line("Question: $random_num");
+    $randomNum = getRandNum();
+    line("Question: $randomNum");
     $answer = prompt('Your answer');
-    $right_answer = primeCheck($random_num);
-    return [$answer, $right_answer];
+    $rightAnswer = primeCheck($randomNum);
+    return [$answer, $rightAnswer];
 }

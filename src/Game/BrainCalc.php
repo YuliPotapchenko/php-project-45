@@ -4,16 +4,23 @@ namespace src\Game;
 
 use function cli\line;
 use function cli\prompt;
-use function src\GameLogic\getRandNum;
-use function src\GameLogic\getRandOperationForCalc;
+use function src\Engine\getRandNum;
+use function src\Engine\getRandOperationForCalc;
+use function src\Engine\runGames;
 
-function run_BrainCalc_logic(): array
+const RULES = 'What is the result of the expression?';
+
+function runBrainCalcGame()
 {
-    $random_num1 = getRandNum();
-    $random_num2 = getRandNum();
-    $operation = getRandOperationForCalc();
-    line("Question: $random_num1 $operation $random_num2");
-    $answer = prompt('Your answer');
-    $right_answer = eval('return ' . $random_num1 . $operation . $random_num2 . ';');
-    return [$answer, $right_answer];
+    $getQuestionAndAnswer = function () {
+        $randomNum1 = getRandNum();
+        $randomNum2 = getRandNum();
+        $operation = getRandOperationForCalc();
+        line("Question: $randomNum1 $operation $randomNum2");
+        $answer = prompt('Your answer');
+        $rightAnswer = eval('return ' . $randomNum1 . $operation . $randomNum2 . ';');
+        return [$answer, $rightAnswer];
+    };
+
+    runGames($getQuestionAndAnswer, RULES);
 }
