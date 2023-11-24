@@ -13,6 +13,7 @@ function runGames(array $getQuestionAndAnswer,string $rules)
     $name = prompt('May I have your name?');
     line("Hello, $name!");
     line($rules);
+    print_r($getQuestionAndAnswer);
     foreach ($getQuestionAndAnswer as $result) {
         [$gameTask, $correctAnswer] = $result;
         line("Question: {$gameTask}");

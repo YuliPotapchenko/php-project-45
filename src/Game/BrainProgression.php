@@ -18,11 +18,11 @@ function runBrainProgressionGame()
         $randomProgressionPosNum = random_int(1, 10);
         $randomProgressorVal = random_int(1, 10);
         $progressLine = [];
-        for ($i = 0; $i < 10; $i++) {
-            if ($i == $randomProgressionPosNum - 1) {
+        for ($j = 0; $j < 10; $j++) {
+            if ($j == $randomProgressionPosNum - 1) {
                 $progressLine[] = '..';
             } else {
-                $progressLine[] = $randomNum + $randomProgressorVal * $i;
+                $progressLine[] = $randomNum + $randomProgressorVal * $j;
             }
         }
         $progressLine = implode(' ', $progressLine);
