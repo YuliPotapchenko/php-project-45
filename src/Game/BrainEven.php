@@ -5,6 +5,7 @@ namespace src\Game;
 use function cli\line;
 use function cli\prompt;
 use function src\Engine\getRandNum;
+use function src\Engine\runGames;
 
 const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 

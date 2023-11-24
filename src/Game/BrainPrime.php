@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\primeCheck;
+use function src\Engine\runGames;
 
 const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

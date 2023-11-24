@@ -5,6 +5,7 @@ namespace src\Game;
 use function cli\line;
 use function cli\prompt;
 use function src\Engine\getRandNum;
+use function src\Engine\runGames;
 use function src\Engine\nod;
 
 const RULES = 'Find the greatest common divisor of given numbers.';
