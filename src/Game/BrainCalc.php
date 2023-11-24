@@ -8,7 +8,7 @@ use function src\Engine\getRandNum;
 use function src\Engine\getRandOperationForCalc;
 use function src\Engine\runGames;
 
-const RULES = 'What is the result of the expression?';
+const RULES_CALC = 'What is the result of the expression?';
 
 function runBrainCalcGame()
 {
@@ -22,5 +22,5 @@ function runBrainCalcGame()
         return [$answer, $rightAnswer];
     };
 
-    runGames($getQuestionAndAnswer, RULES);
+    runGames($getQuestionAndAnswer, RULES_CALC);
 }

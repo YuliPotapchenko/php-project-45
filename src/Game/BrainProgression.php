@@ -7,7 +7,7 @@ use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\runGames;
 
-const RULES = 'What number is missing in the progression?';
+const RULES_PROGRESSION = 'What number is missing in the progression?';
 
 function runBrainProgressionGame()
 {
@@ -30,5 +30,5 @@ function runBrainProgressionGame()
         return [$answer, $rightAnswer];
     };
 
-    runGames($getQuestionAndAnswer, RULES);
+    runGames($getQuestionAndAnswer, RULES_PROGRESSION);
 }

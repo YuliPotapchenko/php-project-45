@@ -8,7 +8,7 @@ use function src\Engine\getRandNum;
 use function src\Engine\primeCheck;
 use function src\Engine\runGames;
 
-const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const RULES_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function runBrainPrimeGame()
 {
@@ -20,5 +20,5 @@ function runBrainPrimeGame()
         return [$answer, $rightAnswer];
     };
 
-    runGames($getQuestionAndAnswer, RULES);
+    runGames($getQuestionAndAnswer, RULES_PRIME);
 }

@@ -7,7 +7,7 @@ use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\runGames;
 
-const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
+const RULES_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function runBrainEvenGame()
 {
@@ -19,5 +19,5 @@ function runBrainEvenGame()
         return [$answer, $rightAnswer];
     };
 
-    runGames($getQuestionAndAnswer, RULES);
+    runGames($getQuestionAndAnswer, RULES_EVEN);
 }

@@ -8,7 +8,7 @@ use function src\Engine\getRandNum;
 use function src\Engine\runGames;
 use function src\Engine\nod;
 
-const RULES = 'Find the greatest common divisor of given numbers.';
+const RULES_GCD = 'Find the greatest common divisor of given numbers.';
 
 function runBrainGcdGame()
 {
@@ -21,5 +21,5 @@ function runBrainGcdGame()
         return [$answer, $rightAnswer];
     };
 
-    runGames($getQuestionAndAnswer, RULES);
+    runGames($getQuestionAndAnswer, RULES_GCD);
 }
