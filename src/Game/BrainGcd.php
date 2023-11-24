@@ -2,11 +2,10 @@
 
 namespace src\Game;
 
-use function cli\line;
-use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\runGames;
 use function src\Engine\nod;
+
 use const src\Engine\ROUNDS_COUNT;
 
 const RULES_GCD = 'Find the greatest common divisor of given numbers.';

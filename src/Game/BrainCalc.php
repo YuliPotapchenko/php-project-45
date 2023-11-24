@@ -2,11 +2,10 @@
 
 namespace src\Game;
 
-use function cli\line;
-use function cli\prompt;
 use function src\Engine\getRandNum;
 use function src\Engine\getRandOperationForCalc;
 use function src\Engine\runGames;
+
 use const src\Engine\ROUNDS_COUNT;
 
 const RULES_CALC = 'What is the result of the expression?';
