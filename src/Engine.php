@@ -17,7 +17,7 @@ function runGames(array $questionsAndAnswers, string $rules): void
         [$gameTask, $correctAnswer] = $result;
         line("Question: {$gameTask}");
         $playerAnswer = prompt("Your answer");
-        if ((string) $playerAnswer === (string) $correctAnswer) {
+        if ($playerAnswer === (string) $correctAnswer) {
             line("Correct!");
         } else {
             line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
