@@ -2,8 +2,8 @@
 
 namespace src\Game;
 
-use function src\Engine\getRandNum;
-use function src\Engine\primeCheck;
+use function src\Game\getRandNum;
+use function src\Game\isPrime;
 use function src\Engine\runGames;
 
 use const src\Engine\ROUNDS_COUNT;
@@ -15,7 +15,7 @@ function runBrainPrimeGame()
     $getQuestionAndAnswer = [];
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $randomNum = getRandNum();
-        $rightAnswer = primeCheck($randomNum);
+        $rightAnswer = isPrime($randomNum);
         $getQuestionAndAnswer[$i] = [$randomNum, $rightAnswer];
     }
     runGames($getQuestionAndAnswer, RULES_PRIME);

@@ -2,9 +2,9 @@
 
 namespace src\Game;
 
-use function src\Engine\getRandNum;
+use function src\Game\getRandNum;
 use function src\Engine\runGames;
-use function src\Engine\nod;
+use function src\Game\nod;
 
 use const src\Engine\ROUNDS_COUNT;
 

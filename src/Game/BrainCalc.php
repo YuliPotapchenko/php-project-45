@@ -2,8 +2,8 @@
 
 namespace src\Game;
 
-use function src\Engine\getRandNum;
-use function src\Engine\getRandOperationForCalc;
+use function src\Game\getRandNum;
+use function src\Game\getRandOperationForCalc;
 use function src\Engine\runGames;
 
 use const src\Engine\ROUNDS_COUNT;
